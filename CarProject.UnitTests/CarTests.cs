@@ -62,10 +62,10 @@ namespace CarProject.UnitTests
         class FakeDice : IDice
         {
             public int Dots { get { return 2; } }
-
+            public bool RollWasCalled { get; private set; } = false;
             public void Roll()
             {
-
+                RollWasCalled = true;
             }
         }
         [TestMethod]
@@ -79,6 +79,18 @@ namespace CarProject.UnitTests
             car.Accelerate();
             //ASSERT      
             Assert.AreEqual(60, car.Speed);
+        }
+        [TestMethod]
+        public void ItShouldCallDiceRoll_GivenAccelerateIsCalled()
+        {
+            //ARRANGE
+            FakeDice fakeDice = new FakeDice();
+            Car car = new Car(fakeDice);
+
+            //ACT
+            car.Accelerate();
+            //ASSERT      
+            Assert.IsTrue(fakeDice.RollWasCalled);
         }
     }
 }
