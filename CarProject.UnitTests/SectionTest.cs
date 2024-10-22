@@ -7,11 +7,12 @@ namespace CarProject.UnitTests
         [TestMethod]
         public void ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated()
         {
+            var someSpeed = 60;
+            var someLength = 400;
+            Section section = new Section(someSpeed, someLength);
 
-            Section section = new Section(60, 400);
-
-            Assert.AreEqual(60, section.MaxSpeed);
-            Assert.AreEqual(400, section.Length);
+            Assert.AreEqual(someSpeed, section.MaxSpeed);
+            Assert.AreEqual(someLength, section.Length);
         }
     }
 }
