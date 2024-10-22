@@ -5,6 +5,13 @@ namespace CarProject.UnitTests
     public class SectionTest
     {
         [TestMethod]
-        public void ItShouldHaveALength
+        public void ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated()
+        {
+
+            Section section = new Section(60, 400);
+
+            Assert.AreEqual(60, section.MaxSpeed);
+            Assert.AreEqual(400, section.Length);
+        }
     }
 }
