@@ -49,5 +49,18 @@ namespace CarProject.UnitTests
 
             Assert.AreEqual(sectionTwo, sectionOne.NextSection.NextSection);
         }
+
+        [TestMethod]
+        public void ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddbeforeMeIsCalled()
+        {
+            Section sectionOne = new Section(60, 400);
+            Section sectionTwo = new Section(60, 500);
+            Section insertSection = new Section(50, 300);
+
+            sectionOne.AddBeforeMe(sectionTwo);
+            sectionTwo.AddBeforeMe(insertSection);
+
+            Assert.AreEqual(sectionTwo, sectionOne.NextSection.NextSection);
+        }
     }
 }
