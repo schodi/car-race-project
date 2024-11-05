@@ -8,89 +8,113 @@ namespace CarProject.UnitTests
         [TestMethod]
         public void ItShouldStandStill_GivenCreated()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines neuen Autos
             Car car = new Car();
-            //ACT
+
+            // ACT - Abfrage der Anfangsgeschwindigkeit des Autos
             int actualSpeed = car.Speed;
-            //ASSERT
-            Assert.AreEqual(0, actualSpeed);
+
+            // ASSERT - Überprüfen, ob die Geschwindigkeit 0 ist
+            Assert.AreEqual(0, actualSpeed); // Erwartung: Geschwindigkeit ist 0.
         }
 
         [TestMethod]
         public void ItShouldStore_GivenGearBetweenOneAndSix()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines neuen Autos
             Car car = new Car();
-            //ACT
+
+            // ACT - Setzen des Gangs auf einen gültigen Wert (z. B. 6)
             car.Gear = 6;
-            //ASSERT
-            Assert.AreEqual(6, car.Gear);
+
+            // ASSERT - Überprüfen, ob der Gang korrekt gespeichert wurde
+            Assert.AreEqual(6, car.Gear); // Erwartung: Gang ist 6.
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException), "Gear should be between 0 and 6")]
         public void ItShouldThrowAnExpection_GivenGearOutsideRange()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines neuen Autos
             Car car = new Car();
-            //ACT
-            car.Gear = 7;
-            //ASSERT      
+
+            // ACT - Setzen eines ungültigen Gangwerts (z. B. 7)
+            car.Gear = 7; // Erwartung: ArgumentException.
+
+            // ASSERT - Überprüfung erfolgt durch das ExpectedException-Attribut
         }
 
         [TestMethod]
         public void ItShouldHaveASpeedOfZero_GivenNoAcceleration()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines neuen Autos und Setzen des Gangs
             Car car = new Car();
-            //ACT
             car.Gear = 3;
-            //ASSERT      
-            Assert.IsTrue(car.Speed == 0);
+
+            // ACT - Keine Beschleunigung durchführen
+
+            // ASSERT - Überprüfen, ob die Geschwindigkeit 0 ist
+            Assert.IsTrue(car.Speed == 0); // Erwartung: Geschwindigkeit ist 0.
         }
+
         [TestMethod]
         public void ItShouldHaveASpeedBetween30And180_GivenGear3AndAccelerated()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines neuen Autos und Setzen des Gangs
             Car car = new Car();
-            //ACT
             car.Gear = 3;
+
+            // ACT - Beschleunigung durchführen
             car.Accelerate();
-            //ASSERT      
-            Assert.IsTrue(car.Speed >= 30 && car.Speed <= 180);
+
+            // ASSERT - Überprüfen, ob die Geschwindigkeit im erwarteten Bereich liegt
+            Assert.IsTrue(car.Speed >= 30 && car.Speed <= 180); // Erwartung: Geschwindigkeit zwischen 30 und 180.
         }
+
         class FakeDice : IDice
         {
-            public int Dots { get { return 2; } }
-            public bool RollWasCalled { get; private set; } = false;
+            #region properties
+            public int Dots { get; set; } // Festgelegter Wert für Würfelaugen zur Kontrolle im Test
+            public bool RollWasCalled { get; private set; } = false; // Flag, ob Roll() aufgerufen wurde
+            #endregion properties
+
+            #region methods
             public void Roll()
             {
-                RollWasCalled = true;
+                RollWasCalled = true; // Flag setzen, um zu prüfen, ob Roll() aufgerufen wurde
             }
+            #endregion methods
         }
+
         [TestMethod]
         public void ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots()
         {
-            //ARRANGE
-            FakeDice fakeDice = new FakeDice();
+            // ARRANGE - Erstellen eines Autos mit einem FakeDice und Setzen des Gangs
+            FakeDice fakeDice = new FakeDice { Dots = 2 }; // Setzt die Würfelaugen auf 2
             Car car = new Car(fakeDice);
-            //ACT
             car.Gear = 3;
+
+            // ACT - Beschleunigung durchführen
             car.Accelerate();
-            //ASSERT      
-            Assert.AreEqual(60, car.Speed);
+
+            // ASSERT - Überprüfen, ob die Geschwindigkeit korrekt berechnet wurde (3 * 10 * 2 = 60)
+            Assert.AreEqual(60, car.Speed); // Erwartung: Geschwindigkeit ist 60.
         }
+
         [TestMethod]
         public void ItShouldCallDiceRoll_GivenAccelerateIsCalled()
         {
-            //ARRANGE
+            // ARRANGE - Erstellen eines Autos mit einem FakeDice
             FakeDice fakeDice = new FakeDice();
             Car car = new Car(fakeDice);
 
-            //ACT
+            // ACT - Beschleunigung durchführen
             car.Accelerate();
-            //ASSERT      
-            Assert.IsTrue(fakeDice.RollWasCalled);
+
+            // ASSERT - Überprüfen, ob Roll() aufgerufen wurde
+            Assert.IsTrue(fakeDice.RollWasCalled); // Erwartung: Roll() wurde aufgerufen.
         }
+
+
     }
 }

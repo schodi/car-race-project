@@ -6,15 +6,19 @@ using System.Threading.Tasks;
 
 namespace CarProject.Logic
 {
-    // Interface für einen Würfel (Dice) mit den grundlegenden Methoden und Eigenschaften.
-    public interface IDice
+    public class FakeDice : IDice
     {
         #region properties
-        public int Dots { get; }
+        public int Dots { get; set; }
+        public bool RollWasCalled { get; private set; } = false;
         #endregion properties
 
         #region methods
-        public void Roll();
+        public void Roll()
+        {
+            RollWasCalled = true;
+        }
         #endregion methods
+
     }
 }
