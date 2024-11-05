@@ -28,6 +28,14 @@ namespace CarProject.UnitTests
 
             Assert.AreEqual(nextSection, section.NextSection);
         }
-  
+        [TestMethod]
+        public void ItShouldConnectASectionBeforeTheCurrentSection_GivenAddBeforeMeIsCalled()
+        {
+            Section section = new Section(60, 400);
+            Section previousSection = new Section(60, 400);
+            section.AddBeforeMe(previousSection);
+
+            Assert.AreEqual(previousSection, section.PreviousSection);
+        }
     }
 }

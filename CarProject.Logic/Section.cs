@@ -13,6 +13,7 @@ namespace CarProject.Logic
         public int MaxSpeed { get; set; } // Maximalgeschwindigkeit des Abschnitts.
         public int Length { get; set; } // Länge des Abschnitts in Metern.
         public Section? NextSection { get; private set; }
+        public Section? PreviousSection { get; private set; }
         #endregion properties
 
         #region constructors
@@ -24,11 +25,14 @@ namespace CarProject.Logic
         }
         #endregion constructors
 
-        public void AddAfterMe(Section section)
+        public void AddAfterMe(Section nextSection)
         {
-            NextSection = section;
+            NextSection = nextSection;
         }
 
-
+        public void AddBeforeMe(Section previousSection)
+        {
+            PreviousSection = previousSection;
+        }
     }
 }
