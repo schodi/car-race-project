@@ -25,14 +25,18 @@ namespace CarProject.Logic
         }
         #endregion constructors
 
-        public void AddAfterMe(Section nextSection)
+        public void AddAfterMe(Section section)
         {
-            NextSection = nextSection;
+            Section? tmp = NextSection;
+
+            NextSection = section;
+
+            section.NextSection = tmp;
         }
 
-        public void AddBeforeMe(Section previousSection)
+        public void AddBeforeMe(Section section)
         {
-            PreviousSection = previousSection;
+            PreviousSection = section;
         }
     }
 }
