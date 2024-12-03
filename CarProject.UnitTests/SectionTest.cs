@@ -57,7 +57,7 @@ namespace CarProject.UnitTests
             Section sectionTwo = new Section(60, 500);
             Section insertSection = new Section(50, 300);
 
-            sectionOne.AddBeforeMe(sectionTwo);
+            sectionOne.AddAfterMe(sectionTwo);
             sectionTwo.AddBeforeMe(insertSection);
 
             Assert.AreEqual(sectionTwo, sectionOne.NextSection.NextSection);

@@ -8,7 +8,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CarProject.Logic.DefaultDice">
-    <Position X="7.25" Y="2.5" Width="1.5" />
+    <Position X="6.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
       <FileName>DefaultDice.cs</FileName>
@@ -18,12 +18,12 @@
   <Class Name="CarProject.Logic.Section">
     <Position X="3.5" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAAEAAAACAAAAAAAEAABAAAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Section.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CarProject.Logic.FakeDice">
-    <Position X="9.25" Y="2.5" Width="1.5" />
+    <Position X="8.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
       <FileName>FakeDice.cs</FileName>
@@ -31,7 +31,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Interface Name="CarProject.Logic.IDice">
-    <Position X="8" Y="0.5" Width="1.5" />
+    <Position X="7.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IDice.cs</FileName>
