@@ -27,6 +27,7 @@ namespace CarProject.UnitTests
             section.AddAfterMe(nextSection);
 
             Assert.AreEqual(nextSection, section.NextSection);
+            Assert.AreEqual(section, nextSection.PreviousSection);
         }
         [TestMethod]
         public void ItShouldConnectASectionBeforeTheCurrentSection_GivenAddBeforeMeIsCalled()
@@ -47,7 +48,7 @@ namespace CarProject.UnitTests
             sectionOne.AddAfterMe(sectionTwo);
             sectionOne.AddAfterMe(insertSection);
 
-            Assert.AreEqual(sectionTwo, sectionOne.NextSection.NextSection);
+            Assert.AreEqual(sectionTwo, sectionOne.NextSection!.NextSection);
         }
 
         [TestMethod]
@@ -60,7 +61,7 @@ namespace CarProject.UnitTests
             sectionOne.AddAfterMe(sectionTwo);
             sectionTwo.AddBeforeMe(insertSection);
 
-            Assert.AreEqual(sectionTwo, sectionOne.NextSection.NextSection);
+            Assert.AreEqual(sectionTwo, sectionOne.NextSection!.NextSection);
         }
     }
 }
