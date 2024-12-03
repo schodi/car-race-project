@@ -25,5 +25,11 @@ namespace CarProject.UnitTests
 
             Assert.AreEqual(startSection, track.StartSection);
         }
+        [TestMethod]
+        public void ItShouldReturnNumberOfSections()
+        {
+
+        }
+
     }
 }
