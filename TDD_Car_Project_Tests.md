@@ -144,21 +144,21 @@
       > Checks whether `GetMaxSpeed` returns the highest allowed speed in the track.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="" src="./img/.png" width=ß0%>
+         <img alt="ItShouldReturnMaxSpeed_GivenMultipleSections" src="./img/ItShouldReturnMaxSpeed_GivenMultipleSections.png" width=ß0%>
          </details>
       
     - ### ***ItShouldThrowException_GivenEmptySectionList***:
       > Ensure an `exception is thrown` when track is created without sections.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="" src="./img/.png" width=ß0%>
+         <img alt="ItShouldThrowException_GivenEmptySectionList" src="./img/ItShouldThrowException_GivenEmptySectionList.png" width=ß0%>
          </details>
       
     - ### ***ItShouldThrowException_GivenNullSectionInList***:
       > Checks whether no `null` objects are accepted as a section.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="" src="./img/.png" width=ß0%>
+         <img alt="ItShouldThrowException_GivenNullSectionInList" src="./img/ItShouldThrowException_GivenNullSectionInList.png" width=ß0%>
          </details>
 
 
