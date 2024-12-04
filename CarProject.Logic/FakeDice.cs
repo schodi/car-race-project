@@ -1,24 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CarProject.Logic;
 
-namespace CarProject.Logic
+public class FakeDice : IDice
 {
-    public class FakeDice : IDice
-    {
-        #region properties
-        public int Dots { get; set; }
-        public bool RollWasCalled { get; private set; } = false;
-        #endregion properties
+  #region properties
+  public int Dots { get; set; }
 
-        #region methods
-        public void Roll()
-        {
-            RollWasCalled = true;
-        }
-        #endregion methods
+  public bool RollWasCalled { get; private set; } = false;
+  #endregion
 
-    }
+  #region methods
+  public void Roll() => RollWasCalled = true;
+  #endregion
+
 }
