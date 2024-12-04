@@ -12,17 +12,16 @@ public class TrackBuilder
     _sectionInfos = sectionInfos;
     List<Section> allSections = [ ];
 
-    Section lastSection = null;
+    Section? lastSection = null;
 
     foreach (var section in sectionInfos)
     {
       Section newSection = new(section.Item1 , section.Item2);
 
       if (allSections.Count > 0)
-        lastSection.AddAfterMe(newSection);
+        lastSection!.AddAfterMe(newSection);
 
       lastSection = newSection;
-
       allSections.Add(newSection);
     }
 
