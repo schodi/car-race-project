@@ -1,20 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CarProject.Logic;
 
-namespace CarProject.Logic
+public class Track(List<Section> trackList)
 {
-    public class Track
-    {
-        private List<Section> _trackList;
-        
-        public Track(List<Section> trackList)
-        {
-            this._trackList = trackList;
-        }
+  private readonly List<Section> _trackList = trackList;
 
-        public Section? StartSection { get => _trackList[0]; }
-    }
+  public Section? StartSection { get => _trackList[ 0 ]; }
 }
