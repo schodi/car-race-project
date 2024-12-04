@@ -4,10 +4,12 @@ public class Section
 {
   #region properties
   public int MaxSpeed { get; set; }
+  
   public int Length { get; set; }
+  
   public Section? NextSection { get; private set; }
-  public Section? PreviousSection { get; private set; }
 
+  public Section? PreviousSection { get; private set; }
   #endregion
 
   #region constructor
