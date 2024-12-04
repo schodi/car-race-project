@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CarProject.Logic;
 
-namespace CarProject.Logic
+public class TrackBuilder((int, int)[ ] sectionInfos)
 {
-    public class TrackBuilder
-    {
-        private (int, int)[] sectionInfos;
+  #region field
+  private readonly (int, int)[ ] _sectionInfos = sectionInfos;
+  #endregion
 
-        public TrackBuilder((int, int)[] sectionInfos)
-        {
-            this.sectionInfos = sectionInfos;
-        }
-    }
 }

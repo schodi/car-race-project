@@ -1,6 +1,8 @@
 ﻿namespace CarProject.Logic;
 
-// Interface für einen Würfel (Dice) mit den grundlegenden Methoden und Eigenschaften.
+/// <summary>
+/// Interface für einen Würfel (Dice) mit den grundlegenden Methoden und Eigenschaften.
+/// </summary>
 public interface IDice
 {
   #region properties

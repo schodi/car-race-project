@@ -1,6 +1,8 @@
 ﻿namespace CarProject.Logic;
 
-// Implementierung eines Würfels (Dice), der zufällige Werte zwischen 1 und 6 liefert.
+/// <summary>
+/// Implementierung eines Würfels (Dice), der zufällige Werte zwischen 1 und 6 liefert.
+/// </summary>
 internal class DefaultDice : IDice
 {
   #region field
