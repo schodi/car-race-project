@@ -46,5 +46,6 @@ public class TrackBuilderTest
     TrackBuilder builder = new(sectionInfos , trackShallLoop: true);
 
     Assert.AreEqual(true , builder.RaceTrack!.LoopedTrack);
+    
   }
 }
