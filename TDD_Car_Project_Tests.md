@@ -28,17 +28,54 @@
 
 ---
 - # 3.) Tests for the Section class
-  - ***ItShouldSetMaxSpeedAndLength_GivenValidValues***:
+  - ### ***ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated***:
     > Ensures that MaxSpeed ​​and Length are set correctly.
-  - ***ItShouldThrowException_GivenNegativeMaxSpeed***:
-    > Checks whether negative MaxSpeed ​​values ​​throw an exception.
-  - ***ItShouldThrowException_GivenNegativeLength***:
-    > Checks whether negative length values ​​throw an exception.
+      <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated" src="./img/ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated.png" width=80%>
+      </details>
+
+  - ### ***ItShouldConnectASectionAfterTheCurrentSection_GivenAddAfterMeIsCalled***:
+    > Ensures that connecting Sections with `AddAfterMe()` works as expected.
+      <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldConnectASectionAfterTheCurrentSection_GivenAddAfterMeIsCalled" src="./img/ItShouldConnectASectionAfterTheCurrentSection_GivenAddAfterMeIsCalled.png" width=80%>
+      </details>
+
+   - ### ***ItShouldConnectASectionBeforeTheCurrentSection_GivenAddBeforeMeIsCalled***:
+     > Ensures that connecting Sections with `AddBeforeMe()` works as expected.
+       <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
+
+        <img alt="ItShouldConnectASectionBeforeTheCurrentSection_GivenAddBeforeMeIsCalled" src="./img/ItShouldConnectASectionBeforeTheCurrentSection_GivenAddBeforeMeIsCalled.png" width=80%>
+      </details>
+
+    - ### ***ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddAfterMeIsCalled***:
+      > Ensures that connecting Sections with `AddAfterMe()` reconnects given Sections as expected.
+       <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
+
+        <img alt="ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddAfterMeIsCalled" src="./img/ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddAfterMeIsCalled.png" width=80%>
+      </details>
+
+    - ### ***ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddbeforeMeIsCalled***:
+      > Ensures that connecting Sections with `AddBeforeMe()` reconnects given Sections as expected.
+        <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddbeforeMeIsCalled" src="./img/ItShouldInsertASectionBetweenTwoSections_GivenTwoConnectedSectionsAndAddbeforeMeIsCalled.png" width=80%>
+        </details>
+    
  - ## 3.1) Additional tests for Section
+    - ***ItShouldThrowException_GivenNegativeMaxSpeed***:
+      > Checks whether negative MaxSpeed ​​values ​​throw an exception.
+     
+    - ***ItShouldThrowException_GivenNegativeLength***:
+      > Checks whether negative length values ​​throw an exception.
+      
     - *Minimum Length Test* (***ItShouldThrowException_GivenLengthLessThanMinimum***):
       > Tests whether an exception is thrown if Length is too low.
+      
     - *Limit for MaxSpeed* ​​(***ItShouldThrowException_GivenMaxSpeedExceedsLimit***):
       > Checks whether MaxSpeed ​​does not exceed the limit.
+
 
 ---
 - # 4.) Tests for the Track class
@@ -53,6 +90,16 @@
     > Checks whether no null objects are accepted as a section.
 
 ---
-- # 5.) Summary
+- # 5.) Tests for the TrackBuilder class
+  - *Conected Track Build test* (***ItShouldBuildAConnectedTrack_GivenSectionInformation***):
+     > Checks if the TrackBuilder builds (connects) a Track with given Sections as expected.
+      <details> <summary> click for Screenshot </summary>
+
+       ![ItShouldBuildAConnectedTrack_GivenSectionInformation](./img/ItShouldBuildAConnectedTrack_GivenSectionInformation.png)
+      </details>
+   
+
+--- 
+- # 6.) Summary
   *These tests cover the most important requirements and error conditions of the Car, Section and Track classes.*  
   *They validate the basic logic and robustness of the program and ensure that the application remains stable even with invalid inputs.*
