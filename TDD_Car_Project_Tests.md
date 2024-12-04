@@ -29,7 +29,7 @@
 ---
 - # 3.) Tests for the Section class
   - ### ***ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated***:
-    > Ensures that MaxSpeed ​​and Length are set correctly.
+    > Ensures that `MaxSpeed` ​​and `Length` are set correctly.
       <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated" src="./img/ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated.png" width=80%>
