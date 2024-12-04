@@ -1,9 +1,20 @@
 ﻿namespace CarProject.Logic;
 
-public class Track(List<Section> trackList)
+public class Track
 {
   #region field
-  private readonly List<Section> _trackList = trackList;
+  private readonly List<Section> _trackList;
+  #endregion
+
+
+  #region constructor
+  public Track(List<Section>? trackList)
+  {
+    if (trackList == null || trackList.Count == 0)
+      throw new ArgumentNullException(nameof(trackList));
+
+    _trackList = trackList;
+  }
   #endregion
 
   #region properties
@@ -14,10 +25,10 @@ public class Track(List<Section> trackList)
     get
     {
       int result = 0;
-      
+
       foreach (var section in _trackList)
         result += section.Length;
-      
+
       return result;
     }
   }
@@ -26,7 +37,7 @@ public class Track(List<Section> trackList)
   {
     get
     {
-      int result = 0; 
+      int result = 0;
 
       foreach (var section in _trackList)
         if (section.MaxSpeed > result)
