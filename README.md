@@ -57,8 +57,8 @@
 
 ----
 
-| Step/Aspect             | With DefaultDice                      | With FakeDice                                      | 
-| :---------              | :--------------:                      | :-----------:                                      |   
+| ***Step/Aspect***       | ***With DefaultDice***                | ***With FakeDice***                                | 
+| :---------------------: | ------------------------------------: | :------------------------------------------------- |   
 | Creating the Car object | DefaultDice is used automatically     | FakeDice is passed explicitly                      | 
 | Calling Roll()          | Generates a random number for Dots    | Just sets RollWasCalled to true                    | 
 | Calculation of speed    | Speed ​​varies based on dots            | Speed ​​is constant (e.g. Dots = 2)                  |
