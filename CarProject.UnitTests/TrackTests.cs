@@ -7,7 +7,7 @@ public class TrackTests
 {
 
   [TestMethod]
-  public void ItShouldCreateATrack_GivenAnyNumbersOfSections()
+  public void ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections()
   {
     Section 
       startSection = new(50 , 300),
