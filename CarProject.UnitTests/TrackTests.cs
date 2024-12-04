@@ -9,15 +9,13 @@ public class TrackTests
   [TestMethod]
   public void ItShouldCreateATrack_GivenAnyNumbersOfSections()
   {
-    List<Section> trackList = new();
-    Section startSection = new Section(50 , 300);
-    Section section = new Section(70 , 500);
-    Section lastSection = new Section(60 , 200);
-    trackList.Add(startSection);
-    trackList.Add(section);
-    trackList.Add(lastSection);
+    Section startSection = new(50 , 300);
+    Section section = new(70 , 500);
+    Section lastSection = new(60 , 200);
 
-    Track track = new Track(trackList);
+    List<Section> trackList = [ startSection , section , lastSection ];
+
+    Track track = new(trackList);
 
     Assert.AreEqual(startSection , track.StartSection);
   }
