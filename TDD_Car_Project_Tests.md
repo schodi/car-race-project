@@ -158,7 +158,7 @@
       > Checks whether no `null` objects are accepted as a section.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldThrowException_GivenNullSectionInList" src="./img/ItShouldThrowException_GivenNullSectionInList.png" width=ß0%>
+         <img alt="ItShouldThrowException_GivenNullSectionList" src="./img/ItShouldThrowException_GivenNullSectionList.png" width=ß0%>
          </details>
 
 
