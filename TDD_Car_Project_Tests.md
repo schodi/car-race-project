@@ -19,13 +19,56 @@
 
 ---
 - # 2.) Tests for the Car class
-  - ***ItShouldHaveZeroSpeed_GivenGearIsZero***:
-    > Checks if Speed ​​is 0 when Gear is set to 0.
-  - ***ItShouldHaveMaximumSpeed_GivenMaxGearAndDots***:
-    > Confirms the maximum speed calculation at maximum gear and dots.
-  - ***ItShouldSetRollWasCalled_GivenAccelerateIsCalled***:
-    > Checks whether Roll() is triggered when Accelerate() is called.
+   
+  - ### ***ItShouldStandStill_GivenCreated***:
+    > Ensures that the `Speed` of the Car is 0, when created.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
 
+       <img alt="ItShouldStandStill_GivenCreated" src="./img/ItShouldStandStill_GivenCreated.png" width=80%>
+      </details>
+   
+  - ### ***ItShouldStore_GivenGearBetweenOneAndSix***:
+    > Ensures that a valid `Gear` is stored as expected.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldStore_GivenGearBetweenOneAndSix" src="./img/ItShouldStore_GivenGearBetweenOneAndSix.png" width=80%>
+      </details>
+ 
+  - ### ***ItShouldThrowAnExpection_GivenGearOutsideRange***: 
+    > Ensures that a `ExpectedException(typeof(ArgumentException)]` is thrown, if an invalid `Gear` was set.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldThrowAnExpection_GivenGearOutsideRange" src="./img/ItShouldThrowAnExpection_GivenGearOutsideRange.png" width=80%>
+      </details>
+
+  - ### ***ItShouldHaveASpeedOfZero_GivenNoAcceleration***: 
+    > Ensures that the `Speed` of a Car is 0, if not accelerated.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldHaveASpeedOfZero_GivenNoAcceleration" src="./img/ItShouldHaveASpeedOfZero_GivenNoAcceleration.png" width=80%>
+      </details>
+
+  - ### ***ItShouldHaveASpeedBetween30And180_GivenGear3AndAccelerated***: 
+    > Ensures that `Accelerate()` works as intended, if a valid `Gear` was chosen and the new `Speed` of the car is in a valid range.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldHaveASpeedBetween30And180_GivenGear3AndAccelerated" src="./img/ItShouldHaveASpeedBetween30And180_GivenGear3AndAccelerated.png" width=80%>
+      </details>
+
+  - ### ***ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots***: 
+    > Ensures that the Acceleration was computed correctly.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots" src="./img/ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots.png" width=80%>
+      </details>
+   
+  - ### ***ItShouldCallDiceRoll_GivenAccelerateIsCalled***: 
+    > Ensures that `Dice.RollWasCalled` is `true` if the car has accelerated.
+      <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldCallDiceRoll_GivenAccelerateIsCalled" src="./img/ItShouldCallDiceRoll_GivenAccelerateIsCalled.png" width=80%>
+      </details>
+ 
 ---
 - # 3.) Tests for the Section class
   - ### ***ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated***:
