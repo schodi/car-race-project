@@ -134,14 +134,14 @@
       *If a track class contains multiple section instances, the following tests may be useful:*
  
     - ### ***ItShouldReturnTotalLength_GivenMultipleSections***:
-      > Checks whether `GetTotalLength()` calculates the correct total length of the sections.
+      > Checks whether `GetTotalLength` calculates the correct total length of the sections.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="" src="./img/.png" width=ß0%>
+         <img alt="ItShouldReturnTotalLength_GivenMultipleSections" src="./img/ItShouldReturnTotalLength_GivenMultipleSections.png" width=ß0%>
          </details>
       
     - ### ***ItShouldReturnMaxSpeed_GivenMultipleSections***:
-      > Checks whether `GetMaxSpeed()` returns the highest allowed speed in the track.
+      > Checks whether `GetMaxSpeed` returns the highest allowed speed in the track.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
          <img alt="" src="./img/.png" width=ß0%>
