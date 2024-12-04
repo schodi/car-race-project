@@ -55,32 +55,13 @@
   - Compliance with MaxSpeed ​​constraints in the 'Section' class to test whether the auto speed respects the section boundaries.  
   - Check error messages for invalid gear values ​​to ensure that the expected exceptions are thrown correctly.  
 
-
-
 ----
-<!--
-Schritt / Aspekt
-Mit DefaultDice
-Mit FakeDice
-Erstellen des Car-Objekts
-DefaultDice wird automatisch verwendet
-FakeDice wird explizit übergeben
-Aufruf von Roll()
-Generiert eine zufällige Zahl für Dots
-Setzt nur RollWasCalled auf true
-Berechnung von Speed
-Geschwindigkeit variiert, basierend auf Dots
-Geschwindigkeit ist konstant (z. B. Dots = 2)
-Ergebnisse im Test
-Geschwindigkeit hängt von zufälligem Dots ab
-Geschwindigkeit ist vorhersehbar, RollWasCalled überprüfbar
-Dots
-Zufälliger Wert zwischen 1 und 6
-Fester Wert für kontrollierte Tests
-Roll() Verhalten
-Generiert und setzt zufälligen Dots-Wert
-Setzt RollWasCalled auf true, Dots bleibt unverändert --> 
 
-
-
-
+| Step/Aspect             | With DefaultDice                      | With FakeDice                                      | 
+| :---------              | :--------------:                      | :-----------:                                      |   
+| Creating the Car object | DefaultDice is used automatically     | FakeDice is passed explicitly                      | 
+| Calling Roll()          | Generates a random number for Dots    | Just sets RollWasCalled to true                    | 
+| Calculation of speed    | Speed ​​varies based on dots            | Speed ​​is constant (e.g. Dots = 2)                  |
+| Results in the test     | Speed ​​depends on random dots          | Speed ​​is predictable, RollWasCalled is verifiable  |
+| Dots                    | Random value between 1 and 6          | Fixed value for controlled testing                 |
+| Roll() behavior         | Generates and sets random dots value  | Sets RollWasCalled to true, Dots remains unchanged |
