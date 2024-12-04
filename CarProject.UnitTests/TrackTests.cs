@@ -11,11 +11,10 @@ public class TrackTests
   {
     Section 
       startSection = new(50 , 300),
-      section = new(70 , 500),
+      middleSection = new(70 , 500),
       lastSection = new(60 , 200);
-
-    List<Section> trackList = [ startSection , section , lastSection ];
-
+    List<Section> trackList = [ startSection , middleSection , lastSection ];
+   
     Track track = new(trackList);
 
     Assert.AreEqual(startSection , track.StartSection);
