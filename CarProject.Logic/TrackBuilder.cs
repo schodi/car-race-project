@@ -12,19 +12,18 @@ public class TrackBuilder
     _sectionInfos = sectionInfos;
     List<Section> allSections = [ ];
 
-    foreach (var section in _sectionInfos)
+    Section lastSection = null;
+
+    foreach (var section in sectionInfos)
     {
       Section newSection = new(section.Item1 , section.Item2);
-      allSections.Add(newSection);
-    }
 
-    int sectionNumber = 0;
-    foreach (var section in allSections)
-    {
-      if (sectionNumber > 0)
-        allSections[ sectionNumber - 1 ].AddAfterMe(allSections[ sectionNumber ]);
-    
-      sectionNumber++;
+      if (allSections.Count > 0)
+        lastSection.AddAfterMe(newSection);
+
+      lastSection = newSection;
+
+      allSections.Add(newSection);
     }
 
     _track = new Track(allSections);
@@ -32,7 +31,7 @@ public class TrackBuilder
   #endregion
 
   #region property
-  public Track? Track => _track;
+  public Track? RaceTrack => _track;
   #endregion
 
 

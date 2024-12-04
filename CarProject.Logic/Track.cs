@@ -7,7 +7,7 @@ public class Track(List<Section> trackList)
   #endregion
 
   #region property
-  public Section? StartSection { get => _trackList[ 0 ]; }
+  public Section? StartSection { get => _trackList.FirstOrDefault(); }
   #endregion
 
 }
