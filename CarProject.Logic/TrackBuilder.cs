@@ -30,7 +30,7 @@ public class TrackBuilder
       allSections.Add(newSection);
     }
 
-    _track = new Track(allSections);
+    _track = new Track(allSections );
   }
   #endregion
 }

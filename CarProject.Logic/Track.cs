@@ -4,15 +4,20 @@ public class Track
 {
   #region field
   private readonly List<Section> _trackList;
+  private readonly bool _loopedTrack;
   #endregion
 
   #region constructor
-  public Track(List<Section>? trackList)
+  public Track(List<Section>? trackList , bool trackShallLoop = false)
   {
     if (trackList == null || trackList.Count == 0)
       throw new ArgumentNullException(nameof(trackList));
 
     _trackList = trackList;
+    _loopedTrack = trackShallLoop;
+
+    if (LoopedTrack)
+      _trackList.Last().AddAfterMe(_trackList.First());
   }
   #endregion
 
@@ -46,6 +51,7 @@ public class Track
     }
   }
 
+  public bool LoopedTrack => _loopedTrack;
   #endregion
 
 }
