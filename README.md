@@ -55,6 +55,8 @@
 
 ----
 
+<div align="center">
+ 
 | ***Step/Aspect***       | ***With DefaultDice***                | ***With FakeDice***                                | 
 | :---------------------: | ------------------------------------: | :------------------------------------------------- |   
 | Creating the Car object | DefaultDice is used automatically     | FakeDice is passed explicitly                      | 
@@ -63,3 +65,5 @@
 | Results in the test     | Speed ​​depends on random dots          | Speed ​​is predictable, RollWasCalled is verifiable  |
 | Dots                    | Random value between 1 and 6          | Fixed value for controlled testing                 |
 | Roll() behavior         | Generates and sets random dots value  | Sets RollWasCalled to true, Dots remains unchanged |
+
+</div>
