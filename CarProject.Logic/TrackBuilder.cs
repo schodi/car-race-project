@@ -6,7 +6,13 @@ public class TrackBuilder
   private readonly (int, int)[ ] _sectionInfos;
 
   private readonly Track? _track;
+  #endregion
 
+  #region property
+  public Track? RaceTrack => _track;
+  #endregion
+
+  #region constructor
   public TrackBuilder((int, int)[ ] sectionInfos)
   {
     _sectionInfos = sectionInfos;
@@ -28,10 +34,4 @@ public class TrackBuilder
     _track = new Track(allSections);
   }
   #endregion
-
-  #region property
-  public Track? RaceTrack => _track;
-  #endregion
-
-
 }
