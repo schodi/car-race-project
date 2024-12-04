@@ -21,7 +21,7 @@
 - # 2.) Tests for the Car class
    
   - ### ***ItShouldStandStill_GivenCreated***:
-    > Ensures that the `Speed` of the Car is 0, when created.
+    > Ensures that the `Speed` of the car is 0, when created.
       <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldStandStill_GivenCreated" src="./img/ItShouldStandStill_GivenCreated.png" width=80%>
@@ -35,14 +35,14 @@
       </details>
  
   - ### ***ItShouldThrowAnExpection_GivenGearOutsideRange***: 
-    > Ensures that a `ExpectedException(typeof(ArgumentException)]` is thrown, if an invalid `Gear` was set.
+    > Ensures that a `ExpectedException(typeof(ArgumentException)` is thrown, if an invalid `Gear` was set.
       <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldThrowAnExpection_GivenGearOutsideRange" src="./img/ItShouldThrowAnExpection_GivenGearOutsideRange.png" width=80%>
       </details>
 
   - ### ***ItShouldHaveASpeedOfZero_GivenNoAcceleration***: 
-    > Ensures that the `Speed` of a Car is 0, if not accelerated.
+    > Ensures that the `Speed` of a car is 0, if not accelerated.
       <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldHaveASpeedOfZero_GivenNoAcceleration" src="./img/ItShouldHaveASpeedOfZero_GivenNoAcceleration.png" width=80%>
@@ -56,7 +56,7 @@
       </details>
 
   - ### ***ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots***: 
-    > Ensures that the Acceleration was computed correctly.
+    > Ensures that the Acceleration and `Speed` was computed correctly.
       <details> <summary> $\color{lightgreen}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots" src="./img/ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots.png" width=80%>
@@ -71,6 +71,7 @@
  
 ---
 - # 3.) Tests for the Section class
+  
   - ### ***ItShouldHaveALengthAndAMaxSpeed_GivenObjectCreated***:
     > Ensures that `MaxSpeed` ​​and `Length` are set correctly.
       <details> <summary> $\color{green}{click\ for\ Screenshot}$ </summary>
