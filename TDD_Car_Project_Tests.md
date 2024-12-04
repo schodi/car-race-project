@@ -127,7 +127,7 @@
       > Ensures that the `StartSection` gets saved by the track, as expected.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections" src="./img/ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections.png" width=ß0%>
+         <img alt="ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections" src="./img/ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections.png" width=80%>
          </details>
 
  - ## 4.1) Additional tests for Track 
@@ -137,40 +137,53 @@
       > Checks whether `GetTotalLength` calculates the correct total length of the sections.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldReturnTotalLength_GivenMultipleSections" src="./img/ItShouldReturnTotalLength_GivenMultipleSections.png" width=ß0%>
+         <img alt="ItShouldReturnTotalLength_GivenMultipleSections" src="./img/ItShouldReturnTotalLength_GivenMultipleSections.png" width=80%>
          </details>
       
     - ### ***ItShouldReturnMaxSpeed_GivenMultipleSections***:
       > Checks whether `GetMaxSpeed` returns the highest allowed speed in the track.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldReturnMaxSpeed_GivenMultipleSections" src="./img/ItShouldReturnMaxSpeed_GivenMultipleSections.png" width=ß0%>
+         <img alt="ItShouldReturnMaxSpeed_GivenMultipleSections" src="./img/ItShouldReturnMaxSpeed_GivenMultipleSections.png" width=80%>
          </details>
       
     - ### ***ItShouldThrowException_GivenEmptySectionList***:
       > Ensure an `exception is thrown` when track is created without sections.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldThrowException_GivenEmptySectionList" src="./img/ItShouldThrowException_GivenEmptySectionList.png" width=ß0%>
+         <img alt="ItShouldThrowException_GivenEmptySectionList" src="./img/ItShouldThrowException_GivenEmptySectionList.png" width=80%>
          </details>
       
     - ### ***ItShouldThrowException_GivenNullSectionInList***:
       > Checks whether no `null` objects are accepted as a section.
         <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-         <img alt="ItShouldThrowException_GivenNullSectionList" src="./img/ItShouldThrowException_GivenNullSectionList.png" width=ß0%>
+         <img alt="ItShouldThrowException_GivenNullSectionList" src="./img/ItShouldThrowException_GivenNullSectionList.png" width=80%>
          </details>
+         
+    - ### ***ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack***:
+      > Checks if a track is a looped track or not.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
 
-
+         <img alt="ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack" src="./img/ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack.png" width=80%>
+        </details>
+        
 ---
 - # 5.) Tests for the TrackBuilder class
-  - *Conected Track Build test* (***ItShouldBuildAConnectedTrack_GivenSectionInformation***):
+  
+  - ### ***ItShouldBuildAConnectedTrack_GivenSectionInformation***:
     > Checks if the TrackBuilder builds (connects) a Track with given Sections as expected.
       <details> <summary> $\color{yellow}{click\ for\ Screenshot}$ </summary>
 
        <img alt="ItShouldBuildAConnectedTrack_GivenSectionInformation" src="./img/ItShouldBuildAConnectedTrack_GivenSectionInformation.png" width=80%>
       </details>
-   
+
+  - ### ***ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack***:
+    > Checks if a track is a looped track or not.
+      <details> <summary> $\color{yellow}{click\ for\ Screenshot}$ </summary>
+
+       <img alt="ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack_Trackbuilder" src="./img/ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack_Trackbuilder.png" width=80%>
+      </details>
 
 --- 
 - # 6.) Summary
