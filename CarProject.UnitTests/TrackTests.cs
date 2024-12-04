@@ -64,7 +64,6 @@ public class TrackTests
     Track track = new(sectionList);
   }
 
-
   [TestMethod]
   public void ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack()
   {
