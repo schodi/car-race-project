@@ -8,7 +8,7 @@ public class FakeDice : IDice
   public bool RollWasCalled { get; private set; } = false;
   #endregion
 
-  #region methods
+  #region method
   public void Roll() => RollWasCalled = true;
   #endregion
 
