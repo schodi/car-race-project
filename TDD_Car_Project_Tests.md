@@ -123,23 +123,52 @@
 
 ---
 - # 4.) Tests for the Track class
-  *If a track class contains multiple section instances, the following tests may be useful:*
-  - *Total length test* (***ItShouldReturnTotalLength_GivenMultipleSections***):
-    > Checks whether GetTotalLength() calculates the correct total length of the sections.
-  - *Maximum speed test* (***ItShouldReturnMaxSpeed_GivenMultipleSections***):
-    > Checks whether GetMaxSpeed() returns the highest allowed speed in the track.
-  - *Empty Section List Test* (***ItShouldThrowException_GivenEmptySectionList***):
-    > Ensure an exception is thrown when track is created without sections.
-  - *Test for null sections in the list* (***ItShouldThrowException_GivenNullSectionInList***):
-    > Checks whether no null objects are accepted as a section.
+    - ### ***ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections***:
+      > Ensures that the `StartSection` gets saved by the track, as expected.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections" src="./img/ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections.png" width=ß0%>
+         </details>
+
+ - ## 4.1) Additional tests for Track 
+      *If a track class contains multiple section instances, the following tests may be useful:*
+ 
+    - ### ***ItShouldReturnTotalLength_GivenMultipleSections***:
+      > Checks whether `GetTotalLength()` calculates the correct total length of the sections.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="" src="./img/.png" width=ß0%>
+         </details>
+      
+    - ### ***ItShouldReturnMaxSpeed_GivenMultipleSections***:
+      > Checks whether `GetMaxSpeed()` returns the highest allowed speed in the track.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="" src="./img/.png" width=ß0%>
+         </details>
+      
+    - ### ***ItShouldThrowException_GivenEmptySectionList***:
+      > Ensure an `exception is thrown` when track is created without sections.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="" src="./img/.png" width=ß0%>
+         </details>
+      
+    - ### ***ItShouldThrowException_GivenNullSectionInList***:
+      > Checks whether no `null` objects are accepted as a section.
+        <details> <summary> $\color{lime}{click\ for\ Screenshot}$ </summary>
+
+         <img alt="" src="./img/.png" width=ß0%>
+         </details>
+
 
 ---
 - # 5.) Tests for the TrackBuilder class
   - *Conected Track Build test* (***ItShouldBuildAConnectedTrack_GivenSectionInformation***):
-     > Checks if the TrackBuilder builds (connects) a Track with given Sections as expected.
-      <details> <summary> click for Screenshot </summary>
+    > Checks if the TrackBuilder builds (connects) a Track with given Sections as expected.
+      <details> <summary> $\color{yellow}{click\ for\ Screenshot}$ </summary>
 
-       ![ItShouldBuildAConnectedTrack_GivenSectionInformation](./img/ItShouldBuildAConnectedTrack_GivenSectionInformation.png)
+       <img alt="ItShouldBuildAConnectedTrack_GivenSectionInformation" src="./img/ItShouldBuildAConnectedTrack_GivenSectionInformation.png" width=80%>
       </details>
    
 
