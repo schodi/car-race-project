@@ -17,10 +17,9 @@ public class TrackBuilder
   {
     _sectionInfos = sectionInfos;
     List<Section> allSections = [ ];
-
     Section? lastSection = null;
 
-    foreach (var section in sectionInfos)
+    foreach (var section in _sectionInfos)
     {
       Section newSection = new(section.Item1 , section.Item2);
 
