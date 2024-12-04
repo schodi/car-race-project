@@ -24,7 +24,7 @@ public class CarTests
   public void ItShouldStandStill_GivenCreated()
   {
     // ARRANGE - Erstellen eines neuen Autos
-    Car car = new Car();
+    Car car = new();
 
     // ACT - Abfrage der Anfangsgeschwindigkeit des Autos
     int actualSpeed = car.Speed;
@@ -37,10 +37,11 @@ public class CarTests
   public void ItShouldStore_GivenGearBetweenOneAndSix()
   {
     // ARRANGE - Erstellen eines neuen Autos
-    Car car = new Car();
-
-    // ACT - Setzen des Gangs auf einen gültigen Wert (z. B. 6)
-    car.Gear = 6;
+    Car car = new()
+    {
+      // ACT - Setzen des Gangs auf einen gültigen Wert (z. B. 6)
+      Gear = 6
+    };
 
     // ASSERT - Überprüfen, ob der Gang korrekt gespeichert wurde
     Assert.AreEqual(6 , car.Gear); // Erwartung: Gang ist 6.
@@ -51,10 +52,11 @@ public class CarTests
   public void ItShouldThrowAnExpection_GivenGearOutsideRange()
   {
     // ARRANGE - Erstellen eines neuen Autos
-    Car car = new Car();
-
-    // ACT - Setzen eines ungültigen Gangwerts (z. B. 7)
-    car.Gear = 7; // Erwartung: ArgumentException.
+    Car car = new()
+    {
+      // ACT - Setzen eines ungültigen Gangwerts (z. B. 7)
+      Gear = 7 // Erwartung: ArgumentException.
+    };
 
     // ASSERT - Überprüfung erfolgt durch das ExpectedException-Attribut
   }
@@ -63,8 +65,10 @@ public class CarTests
   public void ItShouldHaveASpeedOfZero_GivenNoAcceleration()
   {
     // ARRANGE - Erstellen eines neuen Autos und Setzen des Gangs
-    Car car = new Car();
-    car.Gear = 3;
+    Car car = new()
+    {
+      Gear = 3
+    };
 
     // ACT - Keine Beschleunigung durchführen
 
@@ -76,8 +80,10 @@ public class CarTests
   public void ItShouldHaveASpeedBetween30And180_GivenGear3AndAccelerated()
   {
     // ARRANGE - Erstellen eines neuen Autos und Setzen des Gangs
-    Car car = new Car();
-    car.Gear = 3;
+    Car car = new()
+    {
+      Gear = 3
+    };
 
     // ACT - Beschleunigung durchführen
     car.Accelerate();
@@ -90,9 +96,11 @@ public class CarTests
   public void ItShouldHaveASpeedOf60_GivenGear3AndDiceShowsTwoDots()
   {
     // ARRANGE - Erstellen eines Autos mit einem FakeDice und Setzen des Gangs
-    FakeDice fakeDice = new FakeDice { Dots = 2 }; // Setzt die Würfelaugen auf 2
-    Car car = new Car(fakeDice);
-    car.Gear = 3;
+    FakeDice fakeDice = new() { Dots = 2 }; // Setzt die Würfelaugen auf 2
+    Car car = new(fakeDice)
+    {
+      Gear = 3
+    };
 
     // ACT - Beschleunigung durchführen
     car.Accelerate();
@@ -105,8 +113,8 @@ public class CarTests
   public void ItShouldCallDiceRoll_GivenAccelerateIsCalled()
   {
     // ARRANGE - Erstellen eines Autos mit einem FakeDice
-    FakeDice fakeDice = new FakeDice();
-    Car car = new Car(fakeDice);
+    FakeDice fakeDice = new();
+    Car car = new(fakeDice);
 
     // ACT - Beschleunigung durchführen
     car.Accelerate();
