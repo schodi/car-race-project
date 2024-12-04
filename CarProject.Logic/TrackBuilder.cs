@@ -4,7 +4,6 @@ public class TrackBuilder
 {
   #region field
   private readonly (int, int)[ ] _sectionInfos;
-
   private readonly Track? _track;
   #endregion
 
@@ -13,9 +12,10 @@ public class TrackBuilder
   #endregion
 
   #region constructor
-  public TrackBuilder((int, int)[ ] sectionInfos)
+  public TrackBuilder((int, int)[ ] sectionInfos , bool trackShallLoop = false)
   {
     _sectionInfos = sectionInfos;
+
     List<Section> allSections = [ ];
     Section? lastSection = null;
 
@@ -30,7 +30,7 @@ public class TrackBuilder
       allSections.Add(newSection);
     }
 
-    _track = new Track(allSections );
+    _track = new Track(allSections , trackShallLoop);
   }
   #endregion
 }
