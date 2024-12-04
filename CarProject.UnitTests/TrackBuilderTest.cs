@@ -14,9 +14,9 @@ public class TrackBuilderTest
     TrackBuilder builder = new(sectionInfos);
 
     Section
-      startSection = new(10 , 10),
-      secondSection = new(20 , 20),
-      thirdSection = new(30 , 30);
+      startSection = new(sectionInfos[ 0 ].Item1 , sectionInfos[ 0 ].Item2),
+      secondSection = new(sectionInfos[ 1 ].Item1 , sectionInfos[ 1 ].Item2),
+      thirdSection = new(sectionInfos[ 2 ].Item1 , sectionInfos[ 2 ].Item2);
 
     startSection.AddAfterMe(secondSection);
     secondSection.AddAfterMe(thirdSection);
@@ -34,7 +34,7 @@ public class TrackBuilderTest
     Assert.AreEqual(manuallyBuiltTrack.StartSection.MaxSpeed , builder.RaceTrack.StartSection.MaxSpeed);
     Assert.AreEqual(manuallyBuiltTrack.StartSection.NextSection!.Length , builder.RaceTrack.StartSection.NextSection!.Length);
     Assert.AreEqual(manuallyBuiltTrack.StartSection.NextSection.MaxSpeed , builder.RaceTrack.StartSection.NextSection.MaxSpeed);
-    Assert.AreEqual(manuallyBuiltTrack.StartSection.NextSection.NextSection!.Length ,   builder.RaceTrack.StartSection.NextSection.NextSection!.Length);
+    Assert.AreEqual(manuallyBuiltTrack.StartSection.NextSection.NextSection!.Length , builder.RaceTrack.StartSection.NextSection.NextSection!.Length);
     Assert.AreEqual(manuallyBuiltTrack.StartSection.NextSection.NextSection.MaxSpeed , builder.RaceTrack.StartSection.NextSection.NextSection.MaxSpeed);
   }
 
