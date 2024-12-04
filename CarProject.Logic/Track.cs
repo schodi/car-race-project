@@ -6,7 +6,6 @@ public class Track
   private readonly List<Section> _trackList;
   #endregion
 
-
   #region constructor
   public Track(List<Section>? trackList)
   {
