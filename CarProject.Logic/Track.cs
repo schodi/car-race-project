@@ -1,5 +1,4 @@
-﻿
-namespace CarProject.Logic;
+﻿namespace CarProject.Logic;
 
 public class Track(List<Section> trackList)
 {
