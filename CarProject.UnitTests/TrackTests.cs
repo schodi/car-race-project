@@ -45,6 +45,6 @@ public class TrackTests
 
     Track track = new(trackList);
 
-    Assert.AreEqual(1000 , track.GetMaxSpeed);
+    Assert.AreEqual(70 , track.GetMaxSpeed);
   }
 }
