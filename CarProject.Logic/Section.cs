@@ -2,11 +2,23 @@
 
 public class Section
 {
+  #region fields
+  private int _maxSpeed;
+  #endregion
+
   #region properties
-  public int MaxSpeed { get; set; }
-  
-  public int Length { get; set; }
-  
+  public int MaxSpeed
+  {
+    get => _maxSpeed;
+    set => _maxSpeed = value > 300 ? 300 : value < 0 ? 0 : value;
+  }
+
+  public int Length
+  {
+    get;
+    set;
+  }
+
   public Section? NextSection { get; private set; }
 
   public Section? PreviousSection { get; private set; }
@@ -34,10 +46,10 @@ public class Section
   public void AddBeforeMe(Section section)
   {
     Section? tmp = PreviousSection;
-    
+
     PreviousSection = section;
     section.PreviousSection = tmp;
-    
+
     if (tmp != null)
       tmp.NextSection = section;
 
@@ -45,4 +57,8 @@ public class Section
   }
   #endregion
 
+  public override string ToString()
+  {
+    return $" Length    : {Length} \n MaxSpeed  : {MaxSpeed}";
+  }
 }

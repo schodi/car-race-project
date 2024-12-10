@@ -54,4 +54,20 @@ public class Track
   public bool LoopedTrack => _loopedTrack;
   #endregion
 
+
+  public void Debug_PrintSection(int index)
+  {
+    if (_trackList.Count == 0)
+      Console.WriteLine("Your Track is empty");
+    else if (index == -1)
+    {
+      int i = 0;
+      foreach (var section in _trackList)
+        Debug_PrintSection(i++);
+    }
+    else if (index >= _trackList.Count || index < 0)
+      Console.WriteLine("Index out of Range");
+    else
+      Console.WriteLine(_trackList[ index ].ToString());
+  }
 }

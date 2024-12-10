@@ -15,6 +15,9 @@ internal class DefaultDice : IDice
 
   #region method
   public void Roll() => Dots = _random.Next(1 , 7);
+
+
+
   #endregion
 
 }
