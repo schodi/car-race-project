@@ -1,80 +1,96 @@
 ﻿using CarProject.Logic;
 
-namespace CarProject.UnitTests;
-
-[TestClass]
-public class TrackTests
+namespace CarProject.UnitTests
 {
+    [TestClass]
+    public class TrackTests
+    {
+        private List<Section> CreateSampleSections() => new()
+        {
+            new Section(50, 300),
+            new Section(70, 500),
+            new Section(60, 200)
+        };
 
-  [TestMethod]
-  public void ItShouldSaveTheStartSectionOfATrack_GivenAnyNumbersOfSections()
-  {
-    Section
-      startSection = new(50 , 300),
-      middleSection = new(70 , 500),
-      lastSection = new(60 , 200);
-    List<Section> trackList = [ startSection , middleSection , lastSection ];
+        [TestMethod]
+        public void StartSection_ShouldBeSaved_WhenTrackIsInitialized()
+        {
+            // Arrange
+            List<Section> sections = CreateSampleSections();
+            Section expectedStartSection = sections[0];
 
-    Track track = new(trackList);
+            // Act
+            Track track = new(sections);
 
-    Assert.AreEqual(startSection , track.StartSection);
-  }
+            // Assert
+            Assert.AreEqual(expectedStartSection, track.StartSection);
+        }
 
-  [TestMethod]
-  public void ItShouldReturnTotalLength_GivenMultipleSections()
-  {
-    Section
-      startSection = new(50 , 300),
-      middleSection = new(70 , 500),
-      lastSection = new(60 , 200);
-    List<Section> trackList = [ startSection , middleSection , lastSection ];
+        [TestMethod]
+        public void GetTotalLength_ShouldReturnCorrectSum_WhenMultipleSectionsExist()
+        {
+            // Arrange
+            List<Section> sections = CreateSampleSections();
+            Track track = new(sections);
+            int expectedLength = 300 + 500 + 200;
 
-    Track track = new(trackList);
+            // Act
+            int totalLength = track.GetTotalLenght;
 
-    Assert.AreEqual(1000 , track.GetTotalLenght);
-  }
+            // Assert
+            Assert.AreEqual(expectedLength, totalLength);
+        }
 
-  [TestMethod]
-  public void ItShouldReturnMaxSpeed_GivenMultipleSections()
-  {
-    Section
-      startSection = new(50 , 300),
-      middleSection = new(70 , 500),
-      lastSection = new(60 , 200);
-    List<Section> trackList = [ startSection , middleSection , lastSection ];
+        [TestMethod]
+        public void GetMaxSpeed_ShouldReturnMaximumSpeed_WhenMultipleSectionsExist()
+        {
+            // Arrange
+            List<Section> sections = CreateSampleSections();
+            Track track = new(sections);
+            int expectedMaxSpeed = 70;
 
-    Track track = new(trackList);
+            // Act
+            int maxSpeed = track.GetMaxSpeed;
 
-    Assert.AreEqual(70 , track.GetMaxSpeed);
-  }
+            // Assert
+            Assert.AreEqual(expectedMaxSpeed, maxSpeed);
+        }
 
-  [TestMethod]
-  [ExpectedException(typeof(ArgumentNullException) , "Sections cant be empty")]
-  public void ItShouldThrowException_GivenEmptySectionList()
-  {
-    List<Section> sectionList = [ ];
-    Track track = new(sectionList);
-  }
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException), "Sections cant be empty")]
+        public void Constructor_ShouldThrowException_WhenSectionsListIsEmpty()
+        {
+            // Arrange
+            List<Section> emptySections = new();
 
-  [TestMethod]
-  [ExpectedException(typeof(ArgumentNullException) , "Sections cant be empty")]
-  public void ItShouldThrowException_GivenNullSectionList()
-  {
-    List<Section>? sectionList = null;
-    Track track = new(sectionList);
-  }
+            // Act
+            new Track(emptySections);
+        }
 
-  [TestMethod]
-  public void ItShouldConnectTheLastSegmentToTheFirst_GivenAnAdditionalParameterForALoopedTrack()
-  {
-    Section
-      startSection = new(50 , 300),
-      middleSection = new(70 , 500),
-      lastSection = new(60 , 200);
-    List<Section> trackList = [ startSection , middleSection , lastSection ];
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException), "Sections cant be empty")]
+        public void Constructor_ShouldThrowException_WhenSectionsListIsNull()
+        {
+            // Arrange
+            List<Section>? nullSections = null;
 
-    Track track = new(trackList , trackShallLoop: true);
+            // Act
+            new Track(nullSections);
+        }
 
-    Assert.AreEqual(startSection , lastSection.NextSection);
-  }
+        [TestMethod]
+        public void LastSection_ShouldConnectToStartSection_WhenTrackIsLooped()
+        {
+            // Arrange
+            List<Section> sections = CreateSampleSections();
+            Section expectedStartSection = sections[0];
+            Section lastSection = sections[^1];
+
+            // Act
+            Track track = new(sections, trackShallLoop: true);
+
+            // Assert
+            Assert.AreEqual(expectedStartSection, lastSection.NextSection);
+        }
+    }
 }
