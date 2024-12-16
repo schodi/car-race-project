@@ -1,23 +1,27 @@
-﻿namespace CarProject.Logic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-/// <summary>
-/// Implementierung eines Würfels (Dice), der zufällige Werte zwischen 1 und 6 liefert.
-/// </summary>
-internal class DefaultDice : IDice
+namespace CarProject.Logic
 {
-  #region field
-  private readonly Random _random = new();
-  #endregion
+    // Implementierung eines Würfels (Dice), der zufällige Werte zwischen 1 und 6 liefert.
+    internal class DefaultDice : IDice
+    {
+        #region fields
+        private readonly Random _random = new();
+        #endregion fields
 
-  #region property
-  public int Dots { get; private set; }
-  #endregion 
+        #region properties
+        public int Dots { get; private set; }
+        #endregion properties
 
-  #region method
-  public void Roll() => Dots = _random.Next(1 , 7);
-
-
-
-  #endregion
-
+        #region methods
+        public void Roll()
+        {
+            Dots = _random.Next(1, 7);
+        }
+        #endregion methods
+    }
 }

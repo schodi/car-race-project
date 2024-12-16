@@ -1,36 +1,18 @@
-﻿namespace CarProject.Logic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class TrackBuilder
+namespace CarProject.Logic
 {
-  #region field
-  private readonly (int, int)[ ] _sectionInfos;
-  private readonly Track? _track;
-  #endregion
-
-  #region property
-  public Track? RaceTrack => _track;
-  #endregion
-
-  #region constructor
-  public TrackBuilder((int, int)[ ] sectionInfos , bool trackShallLoop = false)
-  {
-    _sectionInfos = sectionInfos;
-
-    List<Section> allSections = [ ];
-    Section? lastSection = null;
-
-    foreach (var section in _sectionInfos)
+    public class TrackBuilder
     {
-      Section newSection = new(section.Item1 , section.Item2);
+        private (int, int)[] sectionInfos;
 
-      if (allSections.Count > 0)
-        lastSection!.AddAfterMe(newSection);
-
-      lastSection = newSection;
-      allSections.Add(newSection);
+        public TrackBuilder((int, int)[] sectionInfos)
+        {
+            this.sectionInfos = sectionInfos;
+        }
     }
-
-    _track = new Track(allSections , trackShallLoop);
-  }
-  #endregion
 }

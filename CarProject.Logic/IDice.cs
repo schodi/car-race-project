@@ -1,16 +1,20 @@
-﻿namespace CarProject.Logic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-/// <summary>
-/// Interface für einen Würfel (Dice) mit den grundlegenden Methoden und Eigenschaften.
-/// </summary>
-public interface IDice
+namespace CarProject.Logic
 {
-  #region properties
-  public int Dots { get; }
-  #endregion
+    // Interface für einen Würfel (Dice) mit den grundlegenden Methoden und Eigenschaften.
+    public interface IDice
+    {
+        #region properties
+        public int Dots { get; }
+        #endregion properties
 
-  #region public methods
-  public void Roll();
-  #endregion
-
+        #region methods
+        public void Roll();
+        #endregion methods
+    }
 }

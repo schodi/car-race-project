@@ -1,64 +1,50 @@
-﻿namespace CarProject.Logic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Section
+namespace CarProject.Logic
 {
-  #region fields
-  private int _maxSpeed;
-  #endregion
+    public class Section
+    {
+        #region properties
+        public int MaxSpeed { get; set; }
+        public int Length { get; set; }
+        public Section? NextSection { get; private set; }
+        public Section? PreviousSection { get; private set; }
+        #endregion properties
 
-  #region properties
-  public int MaxSpeed
-  {
-    get => _maxSpeed;
-    set => _maxSpeed = value > 300 ? 300 : value < 0 ? 0 : value;
-  }
+        #region constructors
 
-  public int Length
-  {
-    get;
-    set;
-  }
+        public Section(int speed, int length)
+        {
+            MaxSpeed = speed;
+            Length = length;
+        }
+        #endregion constructors
 
-  public Section? NextSection { get; private set; }
+        public void AddAfterMe(Section section)
+        {
+            Section? tmp = NextSection;
 
-  public Section? PreviousSection { get; private set; }
-  #endregion
+            NextSection = section;
 
-  #region constructor
-  public Section(int speed , int length)
-  {
-    MaxSpeed = speed;
-    Length = length;
-  }
-  #endregion
+            section.NextSection = tmp;
+            section.PreviousSection = this;
 
-  #region public methods
-  public void AddAfterMe(Section section)
-  {
-    Section? tmp = NextSection;
+        }
 
-    NextSection = section;
-
-    section.NextSection = tmp;
-    section.PreviousSection = this;
-  }
-
-  public void AddBeforeMe(Section section)
-  {
-    Section? tmp = PreviousSection;
-
-    PreviousSection = section;
-    section.PreviousSection = tmp;
-
-    if (tmp != null)
-      tmp.NextSection = section;
-
-    section.NextSection = this;
-  }
-  #endregion
-
-  public override string ToString()
-  {
-    return $" Length    : {Length} \n MaxSpeed  : {MaxSpeed}";
-  }
+        public void AddBeforeMe(Section section)
+        {
+            Section? tmp = PreviousSection;
+            PreviousSection = section;
+            section.PreviousSection = tmp;
+            if (tmp != null)
+            {
+                tmp.NextSection = section;
+            }
+            section.NextSection = this;
+        }
+    }
 }
