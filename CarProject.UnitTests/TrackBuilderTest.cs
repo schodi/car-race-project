@@ -1,22 +1,34 @@
-﻿using CarProject.Logic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace CarProject.UnitTests
+namespace CarProject.Logic
 {
-    [TestClass]
-    public class TrackBuilderTest
+    public class TrackBuilder
     {
-        [TestMethod]
-        public void ItShouldBuildAConnectedTrack_GivenSectionInformation()
+        public Track Track { get; }
+
+        public TrackBuilder((int, int)[] sectionInfos)
         {
-            (int, int)[] sectionInfos = { (10, 10), (20, 20), (30, 30) };
-            TrackBuilder builder = new TrackBuilder(sectionInfos);
-            Assert.AreEqual(new Section(10, 10), builder.Track.Startsection);
+            if (sectionInfos == null || sectionInfos.Length == 0)
+                throw new ArgumentNullException("Section information cannot be null or empty.");
+
+            List<Section> sections = new List<Section>();
+            foreach (var (speed, length) in sectionInfos)
+            {
+                sections.Add(new Section(speed, length));
+            }
+
+            // Link sections in order
+            for (int i = 0; i < sections.Count - 1; i++)
+            {
+                sections[i].NextSection = sections[i + 1];
+            }
+
+            // Initialize the Track
+            Track = new Track(sections);
         }
     }
 }
