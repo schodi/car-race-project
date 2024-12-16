@@ -21,13 +21,11 @@ namespace CarProject.Logic
                 sections.Add(new Section(speed, length));
             }
 
-            // Link sections in order
             for (int i = 0; i < sections.Count - 1; i++)
             {
                 sections[i].NextSection = sections[i + 1];
             }
 
-            // Initialize the Track
             Track = new Track(sections);
         }
     }
